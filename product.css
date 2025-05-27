@@ -8,18 +8,15 @@ body {
 * {
   box-sizing: border-box;
 }
-
 .header {
-  padding: 0px 64px;
+  padding: 10px 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   background-color: #ffffff;
   font-family: "inter", sans-serif;
-  height: 68px;
   align-items: center;
+  justify-content: space-between;
 }
-
 .logo {
   display: flex;
   flex-direction: row;
@@ -28,7 +25,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .p_logo {
   border-style: solid;
   border-color: #155dfc;
@@ -48,8 +44,48 @@ body {
   text-shadow: 0px 4px 4px #564f4f;
 }
 
-.nav {
+.hamburger {
+  width: 24px;
+  height: 24px;
+  color: #155dfc;
+  position: absolute;
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+  color: #155dfc;
+  position: absolute;
+  display: none;
+}
+
+.icon_holder {
+  position: relative;
+  margin-right: 20px;
+  margin-top: -20px;
+}
+
+.nav_container {
+  background-color: #dbeafe;
+  margin-top: -6px;
+  display: none;
+}
+
+.nav_mobile {
   display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  justify-content: center;
+  margin-left: 22px;
+  color: #7a7272;
+}
+
+.nav_mobile li {
+  margin-bottom: 10px;
+}
+
+.nav {
+  display: none;
   flex-direction: row;
   max-width: 305px;
   gap: 32px;
@@ -58,7 +94,7 @@ body {
 }
 
 .sign {
-  display: flex;
+  display: none;
   flex-direction: row;
   font-size: 14px;
   font-weight: 500px;
@@ -81,24 +117,20 @@ body {
   height: 1px;
   background-color: #7a7272;
 }
-
 .section1 {
-  display: grid;
+  display: block;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   padding-top: 60px;
-  padding-top: 80px;
+  padding-bottom: 80px;
   padding-left: clamp(16px, 6vw, 96px);
   padding-right: clamp(16px, 6vw, 96px);
   background-color: #eff6ff;
-  height: 100dvh;
   margin-top: -6px;
   width: 100vw;
 }
 
 .card1 {
-  max-height: 80px;
-  max-width: 540px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -121,15 +153,15 @@ body {
 
   font-weight: 700;
   /* max-width: 540px;
-  max-height: 225px; */
+    max-height: 225px; */
 }
 
 .heading2 {
-  font-size: clamp(16px, 1.5vw + 0.5rem, 18px);
+  font-size: clamp(14px, 1.5vw + 0.5rem, 16px);
 
   font-weight: 300;
   /* max-width: 540px;
-  max-height: 84px; */
+    max-height: 84px; */
 }
 
 .explore_products {
@@ -141,7 +173,7 @@ body {
 
 .products_cards {
   border: 1px solid #155dfc;
-  width: 195px;
+  width: 175px;
   height: 48px;
   background-color: #155dfc;
   display: flex;
@@ -153,7 +185,7 @@ body {
 
 .watch_video {
   border: 1px solid #155dfc;
-  width: 158px;
+  width: 138px;
   height: 48px;
   display: flex;
   justify-content: center;
@@ -202,20 +234,21 @@ body {
   font-weight: 300;
   width: 214px;
   height: 20px;
+  font-size: 10px;
 }
 
 span {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .card2 {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 26px;
   margin-top: 86px;
-  max-width: 500px;
-  max-height: 529px;
+  /* max-width: 500px;
+    max-height: 529px; */
 }
 
 .pill1 {
@@ -277,4 +310,411 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100vw;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: clamp(16px, 6vw, 96px);
+  padding-right: clamp(16px, 6vw, 96px);
+}
+
+.card {
+  border: 1px solid #f3f4f6;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card_icon {
+  border: solid 1px #dbeafe;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #dbeafe;
+}
+
+.icon_wrapper {
+  border: 1px solid #eff6ff;
+  border-radius: 50%;
+  background-color: #eff6ff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_heading {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card_cntent {
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.section2_heading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heading3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.heading3 span {
+  color: #155dfc;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.heading4 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.section3 {
+  background-color: #f9fafb;
+  width: 100vw;
+  padding: 32px 20px;
+}
+
+.section3_heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading5 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.heading6 {
+  font-size: 11px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.section3_pills {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0px 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #ffffff;
+    font-family: "inter", sans-serif;
+    height: 68px;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .p_logo {
+    border-style: solid;
+    border-color: #155dfc;
+    background-color: #155dfc;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product {
+    font-size: 20px;
+    text-shadow: 0px 4px 4px #564f4f;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    max-width: 305px;
+    gap: 32px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .sign {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 500px;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .started {
+    border-style: solid;
+    border-color: #155dfc;
+    background-color: #155dfc;
+    border-radius: 20px;
+    width: 102px;
+    height: 36px;
+    color: white;
+  }
+
+  .line {
+    border: none;
+    height: 1px;
+    background-color: #7a7272;
+  }
+
+  .section1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-top: 80px;
+    padding-left: clamp(16px, 6vw, 96px);
+    padding-right: clamp(16px, 6vw, 96px);
+    background-color: #eff6ff;
+    height: 100dvh;
+    margin-top: -6px;
+    width: 100vw;
+  }
+
+  .card1 {
+    max-height: 80px;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .intro {
+    color: #193cb8;
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+    max-width: 167px;
+    max-height: 28px;
+    background-color: #dbeafe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heading1 {
+    font-size: clamp(36px, 5vw + 1rem, 60px);
+
+    font-weight: 700;
+    /* max-width: 540px;
+    max-height: 225px; */
+  }
+
+  .heading2 {
+    font-size: clamp(16px, 1.5vw + 0.5rem, 18px);
+
+    font-weight: 300;
+    /* max-width: 540px;
+    max-height: 84px; */
+  }
+
+  .explore_products {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .products_cards {
+    border: 1px solid #155dfc;
+    width: 195px;
+    height: 48px;
+    background-color: #155dfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .watch_video {
+    border: 1px solid #155dfc;
+    width: 158px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #155dfc;
+  }
+
+  .ratings {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .rating_images {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 8px;
+  }
+
+  .user {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    margin-left: -8px;
+  }
+
+  .stars {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .star {
+    color: gold;
+  }
+
+  .no-star {
+    color: black;
+  }
+
+  .reviews_content {
+    line-height: 20px;
+    font-weight: 300;
+    width: 214px;
+    height: 20px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .card2 {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-top: 86px;
+    /* max-width: 500px;
+    max-height: 529px; */
+  }
+
+  .pill1 {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    width: clamp(160px, 25.23vw, 323px);
+    height: 56px;
+    font-size: 14px;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    padding-left: 12px;
+    box-shadow: 0px 4px 4px rgb(193, 188, 188);
+    margin-left: 162px;
+    margin-right: 14px;
+  }
+
+  .pill1_icon {
+    border: 1px solid #eff6ff;
+    border-radius: 50%;
+    background-color: #eff6ff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .check {
+    width: 16px;
+    height: 16px;
+  }
+
+  .pill2 {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    width: clamp(200px, 33.75vw, 432px);
+    height: 56px;
+    font-size: 14px;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    padding-left: 12px;
+    margin-left: 53px;
+    margin-right: 46px;
+    box-shadow: 0px 4px 4px rgb(193, 188, 188);
+  }
+
+  .pill2_icon {
+    border: 1px solid #f3e8ff;
+    border-radius: 50%;
+    background-color: #f3e8ff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section2 {
+    background-color: #ffffff;
+    width: 100vw;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: clamp(16px, 6vw, 96px);
+    padding-right: clamp(16px, 6vw, 96px);
+  }
+
+  .section2_heading {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .heading3 {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .heading3 span {
+    color: #155dfc;
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .heading4 {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
