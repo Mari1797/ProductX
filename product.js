@@ -140,3 +140,123 @@ photo_grid.forEach((products) => {
 
   photo.appendChild(photoItem);
 });
+
+const footer = [
+  {
+    footer_logo: "P",
+    footer_heading: "ProductX",
+    list1:
+      "Elevating everyday experiences with premium technology and thoughful design",
+    list2: "",
+    list3: "",
+    list4: "",
+  },
+
+  {
+    footer_heading: "Products",
+    list1: "Features",
+    list2: "Pricing",
+    list3: "Whats new",
+    list4: "Accessories",
+  },
+  {
+    footer_heading: "Support",
+    list1: "Contact Us",
+    list2: "Help Center",
+    list3: "FAQ",
+    list4: "Warranty",
+  },
+  {
+    footer_heading: "Company",
+    list1: "About Us",
+    list2: "Careers",
+    list3: "Press",
+    list4: "Sustainability",
+  },
+  {
+    footer_heading: "Legal",
+    list1: "Terms of Service",
+    list2: "Privacy Policy",
+    list3: "Cookie Policy",
+    list4: "Compliance",
+  },
+];
+
+const footer_grid = document.querySelector(".footer_grid");
+
+footer.forEach((grid, index) => {
+  const title = document.createElement("div");
+  title.textContent = grid.footer_heading;
+  title.classList.add("footer_heading");
+
+  const logo = document.createElement("div");
+  logo.textContent = grid.footer_logo;
+  logo.classList.add("footer_logo");
+
+  const titleWrap = document.createElement("div");
+  titleWrap.classList.add("title_wrapper");
+
+  const list1 = document.createElement("div");
+  list1.textContent = grid.list1;
+  list1.classList.add("list");
+
+  const list2 = document.createElement("div");
+  list2.textContent = grid.list2;
+  list2.classList.add("list");
+
+  const list3 = document.createElement("div");
+  list3.textContent = grid.list3;
+  list3.classList.add("list");
+
+  const list4 = document.createElement("div");
+  list4.textContent = grid.list4;
+  list4.classList.add("list");
+
+  const socials = document.createElement("div");
+  socials.classList.add("socials");
+
+  const twitter = document.createElement("img");
+  twitter.classList.add("twitter");
+  twitter.src = "./socials/twitter.png";
+
+  const facebook = document.createElement("img");
+  facebook.classList.add("facebook");
+  facebook.src = "./socials/facebook.png";
+
+  const instagram = document.createElement("img");
+  instagram.classList.add("instagram");
+  instagram.src = "./socials/instagram.png";
+
+  const linkin = document.createElement("img");
+  linkin.classList.add("twitter");
+  linkin.src = "./socials/linkin.png";
+
+  const footerWrap = document.createElement("div");
+  footerWrap.classList.add("footer_wrapper");
+
+  titleWrap.appendChild(logo);
+
+  if (index === 0) {
+    titleWrap.appendChild(title);
+    footerWrap.appendChild(titleWrap);
+    footWrap();
+    footerWrap.appendChild(socials);
+    socials.appendChild(twitter);
+    socials.appendChild(facebook);
+    socials.appendChild(instagram);
+    socials.appendChild(linkin);
+  } else {
+    footerWrap.appendChild(title);
+    footWrap();
+  }
+
+  function footWrap() {
+    footerWrap.appendChild(list1);
+    footerWrap.appendChild(list2);
+    footerWrap.appendChild(list3);
+    footerWrap.appendChild(list4);
+  }
+
+  // Append footerWrap to footer container
+  footer_grid.appendChild(footerWrap);
+});
