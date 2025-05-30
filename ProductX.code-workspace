@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"name": "ProductX",
+		"path": ".."
+	},
+	{
+		"path": "../../Downloads/users"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "ProductX"
+  }
+}

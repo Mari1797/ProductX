@@ -79,54 +79,64 @@ const photo_grid = [
   },
 ];
 
-const gridContainer = document.querySelector(".photo_grid");
+const photo = document.querySelector(".photo_grid");
 
-photo_grid.forEach((product) => {
+photo_grid.forEach((products) => {
   const photoItem = document.createElement("div");
   photoItem.classList.add("photo_item");
 
   const img = document.createElement("img");
   img.classList.add("photo_img");
-  img.src = product.src;
-  img.alt = product.alt;
+  img.src = products.src;
+  img.alt = products.alt;
 
-  const textWrapper = document.createElement("div");
-  textWrapper.classList.add("photo_text");
+  const textWrap = document.createElement("div");
+  textWrap.classList.add("photo_text");
 
   const categories = document.createElement("div");
   categories.classList.add("categories");
-  categories.textContent = product.categories;
+  categories.textContent = products.categories;
 
   const item = document.createElement("div");
   item.classList.add("item");
-  item.textContent = product.item;
+  item.textContent = products.item;
 
   const description = document.createElement("div");
   description.classList.add("description");
-  description.textContent = product.description;
+  description.textContent = products.description;
 
   const costs = document.createElement("div");
   costs.classList.add("costs");
 
   const cost = document.createElement("div");
   cost.classList.add("cost");
-  cost.textContent = product.cost;
+  cost.textContent = products.cost;
+  const ratingWrap = document.createElement("div");
+  ratingWrap.classList.add("rating_wrap"); // You'll style this class
 
   const rating = document.createElement("div");
   rating.classList.add("item_rating");
-  rating.textContent = product.rating;
+  rating.textContent = products.rating;
 
-  // Nest elements
+  const rating_star = document.createElement("img");
+  rating_star.classList.add("rating_star");
+  rating_star.src = "./stars/star.png";
+
+  // Using the append method
   costs.appendChild(cost);
-  costs.appendChild(rating);
 
-  textWrapper.appendChild(categories);
-  textWrapper.appendChild(item);
-  textWrapper.appendChild(description);
-  textWrapper.appendChild(costs);
+  costs.appendChild(ratingWrap);
+
+  ratingWrap.appendChild(rating_star);
+  ratingWrap.appendChild(rating);
+
+  textWrap.appendChild(categories);
+  textWrap.appendChild(item);
+  textWrap.appendChild(description);
+  textWrap.appendChild(costs);
 
   photoItem.appendChild(img);
-  photoItem.appendChild(textWrapper);
+  photoItem.appendChild(textWrap);
 
-  gridContainer.appendChild(photoItem);
+  photo.appendChild(photoItem);
 });
