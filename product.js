@@ -26,6 +26,8 @@ const photo_grid = [
       "Premium wireless headphones with active noise cancellation and 30-hour battery life",
     cost: "$289.99",
     rating: "4.8",
+    discount: "10% OFF",
+    slash_price: "$200.00",
   },
   {
     src: "./products/watch.png",
@@ -46,6 +48,8 @@ const photo_grid = [
       "Waterproof Blurtooth Speaker with 360 sound and 20 hour battery life for any adventure",
     cost: "$110.49",
     rating: "4.5",
+    discount: "15% OFF",
+    slash_price: "$120.00",
   },
   {
     src: "./products/laptop.png",
@@ -66,6 +70,8 @@ const photo_grid = [
       "Premium wireless headphones with active noise cancellation and 30-hour battery life",
     cost: "$289.99",
     rating: "4.8",
+    discount: "5% OFF",
+    slash_price: "$100.00",
   },
   {
     src: "./products/laptop.png",
@@ -81,7 +87,7 @@ const photo_grid = [
 
 const photo = document.querySelector(".photo_grid");
 
-photo_grid.forEach((products) => {
+photo_grid.forEach((products, index) => {
   const photoItem = document.createElement("div");
   photoItem.classList.add("photo_item");
 
@@ -89,6 +95,9 @@ photo_grid.forEach((products) => {
   img.classList.add("photo_img");
   img.src = products.src;
   img.alt = products.alt;
+
+  const imageWrap = document.createElement("div");
+  imageWrap.classList.add("imageWrap");
 
   const textWrap = document.createElement("div");
   textWrap.classList.add("photo_text");
@@ -122,8 +131,28 @@ photo_grid.forEach((products) => {
   rating_star.classList.add("rating_star");
   rating_star.src = "./stars/star.png";
 
+  const discount = document.createElement("div");
+  discount.textContent = products.discount;
+  discount.classList.add("discount");
+
+  const slash_price = document.createElement("div");
+  slash_price.classList.add("slash_price");
+  slash_price.textContent = products.slash_price;
+
+  const costWrap = document.createElement("div");
+  costWrap.classList.add("costWrap");
+
   // Using the append method
-  costs.appendChild(cost);
+
+  imageWrap.appendChild(img);
+  imageWrap.appendChild(img);
+
+  if (products.discount) {
+    imageWrap.appendChild(discount);
+  }
+  costs.appendChild(costWrap);
+  costWrap.appendChild(cost);
+  costWrap.appendChild(slash_price);
 
   costs.appendChild(ratingWrap);
 
@@ -135,7 +164,7 @@ photo_grid.forEach((products) => {
   textWrap.appendChild(description);
   textWrap.appendChild(costs);
 
-  photoItem.appendChild(img);
+  photoItem.appendChild(imageWrap);
   photoItem.appendChild(textWrap);
 
   photo.appendChild(photoItem);
